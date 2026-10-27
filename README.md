@@ -27,14 +27,15 @@ Then: [`docs/REQUIREMENTS.md`](docs/REQUIREMENTS.md) (the 22-item tracker with e
 
 ```mermaid
 flowchart LR
-    you([You]) --> front["Terminal chat · pixel cat · voice"]
-    front --> loop["Agent loop"]
-    trig["Triggers and the rag daemon<br/>reminders · schedules · folder and mail watches"] --> loop
-    loop --> perm{"Permission check<br/>role → mode → risk"}
-    perm --> tools["Built-in tools<br/>files · Office · mail · web · shell"]
-    perm --> skills["Your skills<br/>sandboxed: Job Object + audit hook"]
-    loop <--> gw["Gateway<br/>loopback only"] <--> ollama["Ollama on 127.0.0.1<br/>qwen3.5:4b · nomic-embed-text"]
-    loop <--> vault[("Encrypted vault (SQLCipher)<br/>memory · plans · triggers · action log")]
+    you(["You"]) --> front["Terminal chat, pixel cat, voice"]
+    front --> agent["Agent loop"]
+    trig["Triggers and the rag daemon<br/>reminders, schedules, folder and mail watches"] --> agent
+    agent --> perm{"Permission check<br/>role, mode, risk"}
+    perm --> tools["Built-in tools<br/>files, Office, mail, web, shell"]
+    perm --> skills["Your skills<br/>sandboxed: Job Object and audit hook"]
+    agent <--> gw["Gateway, loopback only"]
+    gw <--> ollama["Ollama on 127.0.0.1<br/>qwen3.5:4b, nomic-embed-text"]
+    agent <--> vault[("Encrypted vault, SQLCipher<br/>memory, plans, triggers, action log")]
 ```
 
 Everything the agent does is written to the vault *before* it happens, so memory, plans, triggers and crash recovery all read the same truth.
