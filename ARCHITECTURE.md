@@ -7,7 +7,7 @@
 | | |
 |---|---|
 | Status | Design v2 (2026-10-25), **updated 2026-10-26 with what was built**: see section 0.1. Sections 2-12 still describe the original design; where the build differs, 0.1 and the dated notes in sections 5.4, 7.3 and 9.1 say so. Measured numbers: `docs/REQUIREMENTS.md`. |
-| Requirements | `Ragnarok A Sovereign, Always-On Personal AI Agent.pdf` (FR1–FR4, NFR1–NFR4) |
+| Requirements | the hackathon brief (FR1–FR4, NFR1–NFR4), not included in the repository; tracked item by item in `docs/REQUIREMENTS.md` |
 | Focus | The five things the PDF stresses: **skills, planning, triggers, encryption, recovery** |
 | Related | `AGENTS.md` (project context) · `docs/DECISIONS.md` (why) · `docs/WORKLOG.md` (what happened) · `docs/history/` (earlier versions) |
 

@@ -17,7 +17,7 @@ A local, always-on personal agent for the IIIT hackathon. Every model call goes 
 leaves the laptop. It remembers you across restarts, uses tools and user-added skills, plans multi-step work, reacts to reminders, folders and
 mail by itself, recovers after a crash, and keeps everything it knows in one encrypted file.
 
-Requirements: `Ragnarok A Sovereign, Always-On Personal AI Agent.pdf` (FR1-FR4, NFR1-NFR4).
+Requirements: the hackathon brief (FR1-FR4, NFR1-NFR4), which is not included in this repository; every item is tracked in [`docs/REQUIREMENTS.md`](docs/REQUIREMENTS.md).
 **Start with [`docs/HACKATHON.md`](docs/HACKATHON.md)**: what the hackathon asks, the approach we took, what we achieved, the demo script and the honest limits.
 Then: [`docs/REQUIREMENTS.md`](docs/REQUIREMENTS.md) (the 22-item tracker with evidence), [`ARCHITECTURE.md`](ARCHITECTURE.md) (design, with a built-versus-designed table in section 0.1),
 [`docs/MEMORY.md`](docs/MEMORY.md) (memory spec), [`docs/DECISIONS.md`](docs/DECISIONS.md) (why we chose things, D-001 to D-051),

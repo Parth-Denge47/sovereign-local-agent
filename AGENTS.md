@@ -6,7 +6,7 @@ Read this before changing anything. Codex reads this file directly; Claude Code 
 
 Ragnarok is a local, always-on personal agent for the IIIT hackathon. Every model call goes to Ollama on this laptop.
 
-- **Requirements:** `Ragnarok A Sovereign, Always-On Personal AI Agent.pdf` (FR1–FR4, NFR1–NFR4)
+- **Requirements:** the hackathon brief (FR1–FR4, NFR1–NFR4), not included in the repository; every item is tracked in `docs/REQUIREMENTS.md`
 - **Design:** `ARCHITECTURE.md`
 - **Why we chose things:** `docs/DECISIONS.md`
 - **What happened:** `docs/WORKLOG.md`
