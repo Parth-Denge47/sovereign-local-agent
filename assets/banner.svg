@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340" width="1200" height="340" role="img" aria-labelledby="t d">
+  <title id="t">Ragnarok: a sovereign, always-on personal AI agent</title>
+  <desc id="d">A local-only personal AI agent. 22 of 22 requirements built, 1,735 tests passing, 50 of 50 crash restores, 12 of 12 sandbox attacks stopped, 0 cloud AI calls.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#070b1a"/>
+      <stop offset="0.55" stop-color="#121a3a"/>
+      <stop offset="1" stop-color="#241446"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#22d3ee"/>
+      <stop offset="0.5" stop-color="#a78bfa"/>
+      <stop offset="1" stop-color="#fbbf24"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="0.82" cy="0.1" r="0.7">
+      <stop offset="0" stop-color="#a78bfa" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#a78bfa" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="340" rx="18" fill="url(#bg)"/>
+  <rect width="1200" height="340" rx="18" fill="url(#halo)"/>
+  <rect x="0.75" y="0.75" width="1198.5" height="338.5" rx="17.5" fill="none" stroke="#ffffff" stroke-opacity="0.12"/>
+
+  <!-- title -->
+  <text x="60" y="108" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="74" font-weight="800" letter-spacing="10" fill="#f8fafc">RAGNAROK</text>
+  <rect x="62" y="126" width="260" height="5" rx="2.5" fill="url(#glow)"/>
+  <text x="60" y="170" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="25" fill="#cbd5e1">A sovereign, always-on personal AI agent. Local-only. Encrypted. Yours.</text>
+
+  <!-- stat chips -->
+  <g font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" text-anchor="middle">
+    <g transform="translate(60,210)">
+      <rect width="204" height="92" rx="14" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.14"/>
+      <text x="102" y="45" font-size="34" font-weight="800" fill="#22d3ee">22 / 22</text>
+      <text x="102" y="71" font-size="14" fill="#cbd5e1">requirements built</text>
+    </g>
+    <g transform="translate(284,210)">
+      <rect width="204" height="92" rx="14" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.14"/>
+      <text x="102" y="45" font-size="34" font-weight="800" fill="#a78bfa">1,735</text>
+      <text x="102" y="71" font-size="14" fill="#cbd5e1">tests passing</text>
+    </g>
+    <g transform="translate(508,210)">
+      <rect width="204" height="92" rx="14" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.14"/>
+      <text x="102" y="45" font-size="34" font-weight="800" fill="#fbbf24">50 / 50</text>
+      <text x="102" y="71" font-size="14" fill="#cbd5e1">hard-kill restores</text>
+    </g>
+    <g transform="translate(732,210)">
+      <rect width="204" height="92" rx="14" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.14"/>
+      <text x="102" y="45" font-size="34" font-weight="800" fill="#22d3ee">12 / 12</text>
+      <text x="102" y="71" font-size="14" fill="#cbd5e1">sandbox attacks stopped</text>
+    </g>
+    <g transform="translate(956,210)">
+      <rect width="184" height="92" rx="14" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.14"/>
+      <text x="92" y="45" font-size="34" font-weight="800" fill="#a78bfa">0</text>
+      <text x="92" y="71" font-size="14" fill="#cbd5e1">cloud AI calls</text>
+    </g>
+  </g>
+</svg>

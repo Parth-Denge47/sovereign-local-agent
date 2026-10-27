@@ -1,3 +1,16 @@
+<p align="center">
+  <img src="assets/banner.svg" alt="Ragnarok: a sovereign, always-on personal AI agent. 22 of 22 requirements built, 1,735 tests passing, 50 of 50 hard-kill restores, 12 of 12 sandbox attacks stopped, 0 cloud AI calls." width="100%">
+</p>
+
+<p align="center">
+  <img alt="Python 3.12" src="https://img.shields.io/badge/python-3.12-3776AB?logo=python&logoColor=white">
+  <img alt="Local LLM: Ollama" src="https://img.shields.io/badge/LLM-Ollama%20(local%20only)-111827">
+  <img alt="Encrypted memory: SQLCipher" src="https://img.shields.io/badge/memory-SQLCipher%20encrypted-0891b2">
+  <img alt="Windows 11" src="https://img.shields.io/badge/platform-Windows%2011-0078D6?logo=windows&logoColor=white">
+  <img alt="1735 tests passing" src="https://img.shields.io/badge/tests-1735%20passing-16a34a">
+  <img alt="Built for the IIIT hackathon" src="https://img.shields.io/badge/built%20for-IIIT%20hackathon-7c3aed">
+</p>
+
 # Ragnarok
 
 A local, always-on personal agent for the IIIT hackathon. Every model call goes to [Ollama](https://ollama.com) on `127.0.0.1`; nothing
@@ -9,6 +22,38 @@ Requirements: `Ragnarok A Sovereign, Always-On Personal AI Agent.pdf` (FR1-FR4, 
 Then: [`docs/REQUIREMENTS.md`](docs/REQUIREMENTS.md) (the 22-item tracker with evidence), [`ARCHITECTURE.md`](ARCHITECTURE.md) (design, with a built-versus-designed table in section 0.1),
 [`docs/MEMORY.md`](docs/MEMORY.md) (memory spec), [`docs/DECISIONS.md`](docs/DECISIONS.md) (why we chose things, D-001 to D-051),
 [`docs/WORKLOG.md`](docs/WORKLOG.md) (what happened and what was measured), [`AGENTS.md`](AGENTS.md) (rules for contributors and coding agents).
+
+## How it fits together
+
+```mermaid
+flowchart LR
+    you([You]) --> front["Terminal chat · pixel cat · voice"]
+    front --> loop["Agent loop"]
+    trig["Triggers and the rag daemon<br/>reminders · schedules · folder and mail watches"] --> loop
+    loop --> perm{"Permission check<br/>role → mode → risk"}
+    perm --> tools["Built-in tools<br/>files · Office · mail · web · shell"]
+    perm --> skills["Your skills<br/>sandboxed: Job Object + audit hook"]
+    loop <--> gw["Gateway<br/>loopback only"] <--> ollama["Ollama on 127.0.0.1<br/>qwen3.5:4b · nomic-embed-text"]
+    loop <--> vault[("Encrypted vault (SQLCipher)<br/>memory · plans · triggers · action log")]
+```
+
+Everything the agent does is written to the vault *before* it happens, so memory, plans, triggers and crash recovery all read the same truth.
+Every model call goes through one gateway to Ollama on the loopback address; there are no cloud models and no API keys.
+
+## By the numbers
+
+Measured on the target laptop (HP OMEN 16, RTX 4050 6 GB). Each row has a command to re-run it in the [measurements table](#measured-on-the-target-laptop).
+
+| What | Result | Target |
+|---|---|---|
+| Retrieval + intent | about **125 ms** | under 800 ms |
+| Restore after a hard kill | **50 of 50** restored, p95 **89 ms** | under 5 s |
+| Background load (triggers, watches, suggestions) | **0.05%** of the machine, 50 MB peak | under 30% |
+| Chat model | `qwen3.5:4b`, 100% on the GPU, **48.8 tok/s**, first token about 145 ms | n/a |
+| Hostile skill attempts | **12 of 12** stopped by the sandbox | n/a |
+| Everyday tasks on the real model | **61 of 64** | n/a |
+
+The benchmark data for memory is synthetic and written by us, so read those numbers as relative quality, not recall in daily use. The honest limits are listed under the table below and in `docs/HACKATHON.md`.
 
 Target machine: HP OMEN 16, i5-13420H, 16 GB RAM, RTX 4050 6 GB, Windows 11, no WSL or Docker.
 
